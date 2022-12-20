@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m0s
-  path: ../../image-update-automation/
+  path: ../image-auto-update/
   prune: true
   sourceRef:
     kind: GitRepository
