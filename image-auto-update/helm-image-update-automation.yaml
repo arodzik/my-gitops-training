@@ -1,13 +1,13 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
 metadata:
-  name: cluster-1-flux-system
-  namespace: cluster-1-flux-system
+  name: image-automation-operator
 spec:
   interval: 1m0s
   sourceRef:
     kind: GitRepository
-    name: cluster-1-flux-system
+    name: flux-system
+    namespace: flux-system
   git:
     checkout:
       ref:
@@ -20,5 +20,5 @@ spec:
     push:
       branch: main
   update:
-    path: ./clusters/cluster-1
+    path: ./clusters/
     strategy: Setters
